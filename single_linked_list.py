@@ -80,15 +80,27 @@ class LinkedList(object):
         else:
             previous.set_next(current.get_next)
 
+
+
+    def reverse(self):
+        current = self.head
+        pre_node = None
+        next_node = None
+        while current:
+            next_node = current.get_next()
+            current.set_next = pre_node
+            pre_node  = current
+            current.set_next = next_node
+        self.head = pre_node
+
 f1  = LinkedList()
 
-print(f1.insert(10))
-print(f1.insert(20))
+f1.insert(10)
+f1.insert(20)
+f1.insert(30)
+f1.insert(40)
+f1.insert(50)
 
-print(f1.insert(30));
-print(f1.insert(40))
-print(f1.insert(50))
+
 print(f1)
 
-
-print(f1.search(30))
